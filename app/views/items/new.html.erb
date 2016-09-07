@@ -1,6 +1,7 @@
 <h1>List Item</h1>
 
-<%= form_for :item do |f| %>
+
+<%= form_for :item, url: items_path do |f| %>
 	<p>
 		<%= f.label :title %>
 		<br>
@@ -14,9 +15,15 @@
 	</p>
 
 	<p>
-		<%= f.label :bit_price %>
+		<%= f.label "'Buy it now' Price" %>
 		<br>
 		<%= f.number_field :bit_price %>
+	</p>
+
+	<p>
+		<%= f.label :end_date %>
+		<br>
+		<%= f.datetime_select :end_date %>
 	</p>
 
 	<p>
@@ -24,3 +31,4 @@
 	</p>
 	
 <% end %>
+
